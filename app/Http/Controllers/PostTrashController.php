@@ -40,6 +40,6 @@ class PostTrashController extends Controller
         }
         $post->forceDelete();
 
-        return redirect()->route('trash.index')->with('success', 'تم حذف السجل نهائيًا');
+        return redirect()->route('trash.index')->with('success', 'The post has force Deleted successfully.');
     }
 }

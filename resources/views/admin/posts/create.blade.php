@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-Add Category
+Add Post
 @endsection
 @section('content')
 <div class="content-body">
@@ -13,7 +13,7 @@ Add Category
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title" id="basic-layout-form">Add Category</h4>
+                        <h4 class="card-title" id="basic-layout-form">Add Post</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -30,7 +30,7 @@ Add Category
                                 @csrf
                                 <input type="hidden" name="id">
                                 <div class="form-body">
-                                    <h4 class="form-section"><i class="ft-tag"></i> Category information</h4>
+                                    <h4 class="form-section"><i class="ft-tag"></i> Post information</h4>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -79,8 +79,8 @@ Add Category
                                         <div class="form-group">
                                             <label for="projectinput1">Published ?</label>
                                             <select class="select2 form-control" id="location2" name="published" required>
-                                                <option value=true selected>Publish</option>
-                                                <option value=false>Unpublish</option>
+                                                <option value='1'>Publish</option>
+                                                <option value='0'>Unpublish</option>
                                             </select>
                                             @error("published")
                                             <span class="text-danger">{{$message}}</span>
@@ -103,8 +103,8 @@ Add Category
                                             <label for="projectinput1">categories</label>
 
                                             <select class="select2 form-control" id="location2" multiple="multiple" name="categories[]" required>
-                                                @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                @foreach ($categories as $Post)
+                                                <option value="{{ $Post->id }}">{{ $Post->name }}</option>
                                                 @endforeach
                                             </select>
                                             @error("categories")

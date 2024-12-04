@@ -22,7 +22,7 @@ class PostController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new resourhttps://www.facebook.com/reel/1226981698586506ce.
      */
     public function create()
     {
@@ -35,16 +35,17 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-
+        //return $request->has('published');
         $validated = $request->validated();
         $validated['user_id'] = Auth::id();
         // $validated['slug'] = Str::slug($validated['title'], '-');
-        $validated['published'] = $request->has('published');
+        //$validated['published'] = $request->has('published');
         $validated['published_at'] = $validated['published'] ? now() : null;
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('images', 'public');
             $validated['image'] = $path;
         }
+        //return $validated;
         $post = Post::create($validated);
         $post->categories()->attach($validated['categories']);
 
@@ -78,8 +79,10 @@ class PostController extends Controller
     {
         $this->authorize('update', $post);
         $validated = $request->validated();
+
         // $validated['slug'] = Str::slug($validated['title'], '-');
-        $validated['published'] = $request->has('published');
+        //$validated['published'] = $request->has('published');
+
         // $validated['published_at'] = $validated['published'] ? now() : null;
 
         if ($request->hasFile('image')) {
@@ -105,7 +108,6 @@ class PostController extends Controller
     {
         $this->authorize('delete', $post);
         $post->delete();
-
         return redirect()->route('posts.index')->with('success', 'Post deleted successfully.');
     }
 }

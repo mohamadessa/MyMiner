@@ -6,7 +6,7 @@
                   <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
                   <li class="nav-item">
                       <a class="navbar-brand" href="index.html">
-                          <img class="brand-logo" alt="modern admin logo" src="{{asset("assets/admin/app-assets/images/logo/logo.png")}}">
+                          <img class="brand-logo" src="{{ asset('storage/images/logo.png') }}" width="180px">
                       </a>
                   </li>
                   <li class="nav-item d-md-none">
@@ -148,19 +148,19 @@
           <ul class="nav navbar-nav float-right">
               <li class="dropdown dropdown-user nav-item">
                   <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                      <span class="mr-1">مرحباً,
-                          {{-- <span class="user-name text-bold-700">{{ auth()->user()->name}} {{ auth()->user()->last_name}}</span> --}}
+                      <span class="mr-1">Welcome,
+                          <span class="user-name text-bold-700">{{ auth()->user()->name}}</span>
                       </span>
                       <span class="avatar avatar-online">
                           <img src="{{asset("assets/admin/app-assets/images/portrait/small/avatar-s-19.png")}}" alt="avatar"><i></i></span>
                   </a>
-                  <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{ route('profile.show') }}"><i class="ft-user"></i> الملف الشخصي</a>
+                  <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{ route('profile.show') }}"><i class="ft-user"></i>Profile</a>
                       {{-- <a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a>
                       <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a>
                       <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>  --}}
                       <form action="{{ route('logout') }}" method="POST">
                           @csrf
-                          <div class="dropdown-divider"></div><button type="submit" class="dropdown-item"><i class="ft-power"></i> تسجيل الخروج</button>
+                          <div class="dropdown-divider"></div><button type="submit" class="dropdown-item"><i class="ft-power"></i> Logout </button>
                       </form>
                   </div>
               </li>

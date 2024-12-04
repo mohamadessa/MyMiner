@@ -74,6 +74,17 @@ All Settings
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="projectinput1">Type</label>
+                                            <input type="text" id="type" value="{{ $settings['type'] }}" name="type" class="form-control" placeholder="type">
+                                            @error("type")
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
 
 
 

@@ -25,15 +25,18 @@
             <x-input id="password_confirmation" type="password" class="mt-1 block w-full" wire:model="state.password_confirmation" autocomplete="new-password" />
             <x-input-error for="password_confirmation" class="mt-2" />
         </div>
+        <div class="form-actions">
+            <x-action-message class="me-3" on="saved">
+                {{ __('Saved.') }}
+            </x-action-message>
+
+            <x-button class="btn btn-primary">
+                {{ __('Save') }}
+            </x-button>
+        </div>
     </x-slot>
 
     <x-slot name="actions">
-        <x-action-message class="me-3" on="saved">
-            {{ __('Saved.') }}
-        </x-action-message>
 
-        <x-button>
-            {{ __('Save') }}
-        </x-button>
     </x-slot>
 </x-form-section>

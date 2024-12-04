@@ -14,24 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/test', function () {
-    return view('admin.admin.add');
-});
-
+Route::get('/register', function () {
+    return redirect()->route('login');
+})->name('register');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return redirect()->route('posts.index');
     })->name('dashboard');
 });
-
 
 // ----------------------------------------------------------------
 

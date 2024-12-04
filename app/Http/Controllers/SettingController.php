@@ -21,7 +21,9 @@ class SettingController extends Controller
      */
     public function updateAll(UpdateSettingRequest $request)
     {
+        //return $request;
         SettingsHelper::updateAll($request->except('_token'));
+
         return redirect()->back()->with('success', 'Settings updated successfully.');
     }
 }

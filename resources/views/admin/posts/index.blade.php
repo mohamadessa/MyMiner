@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-All posts
+All posts | {{ $settings['site_name'] }}
 @endsection
 @section('content')
 <div class="content-body">
@@ -12,7 +12,7 @@ All posts
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">All posts </h4>
+                    <h4 class="card-title">All posts | {{ $settings['site_name'] }}</h4>
                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     <div class="heading-elements">
                         <ul class="list-inline mb-0">

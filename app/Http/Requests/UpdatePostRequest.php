@@ -28,6 +28,7 @@ class UpdatePostRequest extends FormRequest
             'body' => 'required',
             'excerpt' => 'nullable|string|max:300',
             'image' => 'nullable',
+            'published' => 'required|boolean',
             'categories' => 'required|array',
         ];
     }

@@ -18,6 +18,7 @@ class SettingSeeder extends Seeder
             ['key' => 'site_description', 'value' => 'Welcome to my blog!'],
             ['key' => 'contact_email', 'value' => 'contact@myblog.com'],
             ['key' => 'phone_number', 'value' => '+905064569496'],
+            ['key' => 'type', 'value' => 'blog'],
         ];
 
         foreach ($settings as $setting) {

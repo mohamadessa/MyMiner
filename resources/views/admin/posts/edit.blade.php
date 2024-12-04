@@ -52,6 +52,7 @@ Edit Category
                                             </div>
                                         </div>
                                     </div>
+                                    @if($post->image)
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -59,6 +60,7 @@ Edit Category
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
@@ -85,10 +87,10 @@ Edit Category
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="projectinput1">Published ?</label>
+                                            <label for="projectinput1">Published </label>
                                             <select class="select2 form-control" id="location2" name="published" required>
-                                                <option value=true {{ $post->published =='1' ? 'selected' : '' }}>Publish</option>
-                                                <option value=false {{ $post->published !='1' ? 'selected' : '' }}>Unpublish</option>
+                                                <option value='1' {{ $post->published =='1' ? 'selected' : '' }}>Publish</option>
+                                                <option value='0' {{ $post->published !='1' ? 'selected' : '' }}>Unpublish</option>
                                             </select>
                                             @error("published")
                                             <span class="text-danger">{{$message}}</span>
