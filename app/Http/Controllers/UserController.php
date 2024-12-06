@@ -49,6 +49,7 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'email_verified_at' => now()->toDateTime(),
         ]);
 
         return redirect()->route('users.index')->with('success', 'User created successfully');
