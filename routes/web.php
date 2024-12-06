@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,9 @@ Route::middleware([
 });
 
 // ----------------------------------------------------------------
+
+Route::get('mail', [ContactController::class, 'getMail']);
+Route::post('mail', [ContactController::class, 'sentMail'])->name('mail.sent');
 
 Route::get('/web', [HomeController::class, 'index'])->name('web.index');
 Route::get('/', function () {
