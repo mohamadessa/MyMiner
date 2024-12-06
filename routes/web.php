@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\BlogController;
 use App\Http\Controllers\Web\ContactController;
@@ -31,6 +32,9 @@ Route::middleware([
 });
 
 // ----------------------------------------------------------------
+
+Route::get('mail', [ContactController::class, 'getMail']);
+Route::post('mail', [ContactController::class, 'sentMail'])->name('mail.sent');
 
 Route::get('/web', [HomeController::class, 'index'])->name('web.index');
 Route::get('/web/blog', [BlogController::class, 'index'])->name('web.blog.index');
