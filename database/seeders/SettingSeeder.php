@@ -6,6 +6,7 @@ use App\Models\Setting;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+
 class SettingSeeder extends Seeder
 {
     /**
@@ -19,10 +20,21 @@ class SettingSeeder extends Seeder
             ['key' => 'contact_email', 'value' => 'contact@myblog.com'],
             ['key' => 'phone_number', 'value' => '+905064569496'],
             ['key' => 'type', 'value' => 'blog'],
+
+
+
         ];
 
+        //     foreach ($settings as $setting) {
+        //         Setting::create($setting);
+        //     }
+        // }
+
         foreach ($settings as $setting) {
-            Setting::create($setting);
+            Setting::updateOrCreate(
+                ['key' => $setting['key']],
+                ['value' => $setting['value']]
+            );
         }
     }
 }
