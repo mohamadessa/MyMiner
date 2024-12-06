@@ -37,7 +37,7 @@
     23. backtotop
     24. breadcrumb
     25. sec-title
-    
+
 
 -----------------------------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap");
@@ -212,10 +212,10 @@ p, li, span {
 .body_wrap-two {
   position: relative;
   overflow: hidden;
-  background: #4a21ef; }
+  background: #0F172A; }
 
 .bg_img {
-  background-position: center center;
+  background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -3875,6 +3875,7 @@ body[data-aos-easing=ease] [data-aos] {
     font-size: 55px;
     font-weight: 700;
     line-height: 60px;
+   text-align: justify;
     letter-spacing: -0.03px;
     text-transform: capitalize;
     padding-bottom: 32px; }
@@ -3882,7 +3883,8 @@ body[data-aos-easing=ease] [data-aos] {
       .about .about-wrap .xb-item--title {
         font-size: 30px;
         line-height: 45px;
-        padding-bottom: 15px; } }
+        padding-bottom: 15px;
+        text-align: justify; } }
   .about .about-wrap .xb-item--title1 {
     font-size: 30px;
     padding-bottom: 12px; }
@@ -3891,10 +3893,12 @@ body[data-aos-easing=ease] [data-aos] {
     font-weight: 500;
     line-height: 32px;
     padding-bottom: 30px;
-    max-width: 567px; }
+    max-width: 567px;
+    text-align: justify;}
   .about .about-wrap .xb-item--content1 {
     font-size: 18px;
-    line-height: 30px; }
+    line-height: 30px;
+    text-align: justify;}
   .about .about-wrap .xb-item--list span {
     padding-right: 110px;
     margin-bottom: 33px;
@@ -3906,9 +3910,10 @@ body[data-aos-easing=ease] [data-aos] {
       margin-right: 5px; }
   .about .about-img img {
     position: absolute;
-    right: -14%;
-    top: -113px;
-    z-index: -1; }
+    right: 5%;
+    top: 20%;
+    z-index: -1;
+    width: 700px;}
     @media only screen and (min-width: 1200px) and (max-width: 1500px) {
       .about .about-img img {
         right: -26%; } }
@@ -4799,7 +4804,8 @@ body[data-aos-easing=ease] [data-aos] {
     .faq__blockchain .accordion_box .block .content {
       border-top: 0;
       padding-top: 0;
-      padding-right: 70px; }
+      padding-right: 70px;
+    text-align: justify;}
   .faq__blockchain .accordion.block.active-block .acc-btn .arrow {
     height: 40px;
     width: 40px;
@@ -5675,7 +5681,7 @@ body[data-aos-easing=ease] [data-aos] {
 
 .section-title .title {
   font-weight: 700;
-  font-size: 60px;
+  font-size: 70px;
   line-height: 72px;
   letter-spacing: -0.02;
   text-transform: capitalize;

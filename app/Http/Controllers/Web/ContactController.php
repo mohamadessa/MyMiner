@@ -1,6 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Web;
+<<<<<<< HEAD
+
+use App\Http\Controllers\Controller;
+
+use Illuminate\Http\Request;
+use App\Models\Contact;
+=======
 
 use App\Models\Contact;
 
@@ -8,18 +15,20 @@ use App\Http\Controllers\Controller;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+>>>>>>> 613b0159b1a1ef8346256347ef1dfa02381a4bc0
 
 class ContactController extends Controller
 {
 
-    /**
-     * Display the contact page.
-     */
     public function index()
     {
-        return view('contact.index'); // Render the contact page
+        return view('web.contact');
     }
 
+<<<<<<< HEAD
+
+    public function store(Request $request)
+=======
     public function getMail()
     {
 
@@ -29,14 +38,17 @@ class ContactController extends Controller
      * Store the submitted contact form data.
      */
     public function sentMail(Request $request)
+>>>>>>> 613b0159b1a1ef8346256347ef1dfa02381a4bc0
     {
-        // Validate the form data
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'message' => 'required|string',
         ]);
 
+<<<<<<< HEAD
+        Contact::create($request->only(['name', 'email', 'phone', 'message']));
+=======
 
         $details = [
             'name' => $request->name,
@@ -56,8 +68,8 @@ class ContactController extends Controller
         //     'message' => $request->message,
         // ]);
 
+>>>>>>> 613b0159b1a1ef8346256347ef1dfa02381a4bc0
 
-        // Redirect back with a success message
-        return redirect()->back()->with('success', 'Your message has been sent successfully!');
+        return redirect()->back()->with('success', 'Your message has been sent successfully');
     }
 }

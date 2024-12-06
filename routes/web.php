@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Web\BlogController;
+use App\Http\Controllers\Web\ContactController;
+use App\Http\Controllers\Web\CommentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +37,12 @@ Route::get('mail', [ContactController::class, 'getMail']);
 Route::post('mail', [ContactController::class, 'sentMail'])->name('mail.sent');
 
 Route::get('/web', [HomeController::class, 'index'])->name('web.index');
-Route::get('/', function () {
-    return view('/web.blog');
-});
+Route::get('/web/blog', [BlogController::class, 'index'])->name('web.blog.index');
+
+Route::get('/web/contact', [ContactController::class, 'index'])->name('web.contact.index');
+Route::post('/web/contact', [ContactController::class, 'store'])->name('web.contact.store');
+
+Route::get('/web/blog/{post:slug}', [BlogController::class, 'show'])->name('web.blog.show');
+
+
+//Route::post('/web/blog/{post:slug}/comments', [CommentController::class, 'store'])->name('web.blog.comments.store');
